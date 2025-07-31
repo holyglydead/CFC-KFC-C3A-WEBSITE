@@ -1,0 +1,525 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root{
+    --text-dark:#212544;
+    --text-light: #ffffff;
+    --color-code-1:#f38e67;
+    --color-code-2:#4ca5b0;
+    --color-code-3:#212544;
+    --color-code-4:#f3ca81;
+    --color-code-5:#f65d53;
+    --max-width: 1200px;
+    --header-font: "Bebas Neue", sans-serif;
+}
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+img{
+    display: flex;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: #ffffff;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+
+}
+
+/*first index design*/
+/*navigation header*/
+nav{
+    position:fixed;
+    isolation: isolate;
+    width: 100%;
+    z-index: 9;
+}
+
+.nav_header{
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-code-3);
+}
+
+.nav_logo{
+    display: flex;
+    align-items: center;
+}
+
+.nav_logo a {
+    font-size: 1.75rem;
+    font-weight: 400;
+    font-family: var(--header-font);
+    color: var(--text-light);
+}
+
+.logo-img{
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+}
+
+.nav_menu_button{
+    font-size: 1.5rem;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+/*navigation links/tabs*/
+.nav_links{
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--text-dark);
+    transition: 0.5s;
+    z-index: -1;
+    transform: translateY(-100%);
+}
+
+.nav_links.open{
+    transform: translateY(0);
+}
+
+.nav_links a{
+    font-weight: 500;
+    color: var(--text-light);
+
+}
+
+.nav_links a:hover{
+    color: var(--color-code-1);
+}
+
+/*social media logos*/
+.socials{
+    display: flex;
+    flex: 1;
+    flex-direction: row; /* Set this to make them appear horizontally */
+    gap: 10px; /* Add space between icons */
+    justify-content: center; /* Center the icons */
+    list-style-type: none;
+    padding:0;
+    gap: 30px;
+}
+
+.socials a{
+    padding-block: 5px;
+    color: var(--text-dark);
+    border-bottom: 4px solid transparent;
+}
+
+.socials i{
+   color: var(--color-code-3) 
+}
+
+.socials a:hover{
+    border-color: var(--color-code-4);
+}
+
+/*bottom bar footer*/
+.bottom-bar{
+    background: var(--color-code-4);
+    text-align: center;
+    padding:10px 0;
+    margin-top: 50px;
+}
+
+.bottom-bar p{
+    color: var(--text-dark);
+    margin: 0;
+    font-size: 16px;
+    padding: 7px;
+}
+
+
+/*bigger screens*/
+
+@media (width > 768px) {
+    nav{
+        position: static;
+        padding-block: 1rem .5rem;
+        padding-inline: 1rem;
+        max-width: var(--max-width);
+        margin-inline: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .nav_header{
+        flex: 1;
+        padding: 0;
+        background-color: transparent;
+    }
+
+
+    .nav_logo a{
+        color: var(--text-dark);
+    }
+
+    .nav_logo a span{
+        color: var(--color-code-5)
+    }
+
+    .nav_menu_button{
+        display: none;
+    }
+
+    .nav_links{
+        position: static;
+        padding: 0;
+        flex-direction: row;
+        background-color: transparent;
+        transform: none;
+    }
+
+    .nav_links a{
+        padding-block: 5px;
+        color: var(--text-dark);
+        border-bottom: 4px solid transparent;
+    }
+
+    .nav_links a:hover{
+        border-color: var(--color-code-2);
+    }
+
+
+    .socials{
+        display: flex;
+        flex: 1;
+        flex-direction: row; /* Set this to make them appear horizontally */
+        gap: 10px; /* Add space between icons */
+        justify-content: center; /* Center the icons */
+        list-style-type: none;
+        padding:0;
+        gap: 30px;
+    
+    }
+
+    .socials a{
+        padding-block: 5px;
+        color: var(--color-code-4);
+        border-bottom: 4px solid transparent;
+    }
+
+    .socials i{
+       color: var(--color-code-5) 
+    }
+
+    .socials a:hover{
+        border-color: var(--text-light);
+    }
+
+}
+
+/*start of fourth index*/
+.carousel{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+.carousel .list3 .item3{
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.carousel .list3 .item3 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel .list3 .item3 .content3{
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+}
+
+.carousel .list3 .item3 .content3 .des3{
+    padding-right: 50%;
+    position: relative ;
+}
+.carousel .list3 .item3 .author{
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+.carousel .list3 .item3 .title3,
+.carousel .list3 .item3 .topic3{
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+.carousel .list3 .item3 .topic3{
+    color: #f1683a;
+}
+.carousel .list3 .item3 .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+.carousel .list3 .item3 .buttons button{
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+.carousel .list3 .item3 .buttons button:nth-child(2){
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #eee;
+}
+
+/*Thumbnail*/
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+.thumbnail .item3{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+.thumbnail .item3 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.thumbnail .item3 .content3{
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+.thumbnail .item3 .content3 .title3{
+    font-weight: 500;
+}
+.thumbnail .item3 .content3 .description{
+    font-weight: 300;
+}
+
+/*Arrows*/
+.arrows{
+    position: absolute;
+    top: 85%;
+    right: 61.5%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.arrows button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee4;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+}
+.arrows button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+/* animation */
+.carousel .list3 .item3:nth-child(1){
+    z-index: 1;
+}
+
+/* animation text in first item */
+
+.carousel .list3 .item3:nth-child(1) .content3 .author,
+.carousel .list3 .item3:nth-child(1) .content3 .title3,
+.carousel .list3 .item3:nth-child(1) .content3 .topic3,
+.carousel .list3 .item3:nth-child(1) .content3 .des3,
+.carousel .list3 .item3:nth-child(1) .content3 .buttons
+{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.carousel .list3 .item3:nth-child(1) .content3 .title3{
+    animation-delay: 1.2s!important;
+}
+.carousel .list3 .item3:nth-child(1) .content3 .topic3{
+    animation-delay: 1.4s!important;
+}
+.carousel .list3 .item3:nth-child(1) .content3 .des3{
+    animation-delay: 1.6s!important;
+}
+.carousel .list3 .item3:nth-child(1) .content3 .buttons{
+    animation-delay: 1.8s!important;
+}
+/* create animation when next click */
+.carousel.next .list3 .item3:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage .5s linear 1 forwards;
+}
+@keyframes showImage{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.carousel.next .thumbnail .item3:nth-last-child(1){
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.prev .list3 .item3 img{
+    z-index: 100;
+}
+@keyframes showThumbnail{
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+.carousel.next .thumbnail{
+    animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext{
+    from{
+        transform: translateX(150px);
+    }
+}
+
+/* running time */
+
+.carousel .time{
+    position: absolute;
+    z-index: 1000;
+    width: 0%;
+    height: 3px;
+    background-color: #f1683a;
+    left: 0;
+    top: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time{
+    animation: runningTime 3s linear 1 forwards;
+}
+@keyframes runningTime{
+    from{ width: 100%}
+    to{width: 0}
+}
+
+
+/* prev click */
+
+.carousel.prev .list3 .item3:nth-child(2){
+    z-index: 2;
+}
+
+.carousel.prev .list3 .item3:nth-child(2) img{
+    animation: outFrame 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+@keyframes outFrame{
+    to{
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+    }
+}
+
+.carousel.prev .thumbnail .item3:nth-child(1){
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.next .arrows button,
+.carousel.prev .arrows button{
+    pointer-events: none;
+}
+.carousel.prev .list3 .item3:nth-child(2) .content3 .author,
+.carousel.prev .list3 .item3:nth-child(2) .content3 .title3,
+.carousel.prev .list3 .item3:nth-child(2) .content3 .topic3,
+.carousel.prev .list3 .item3:nth-child(2) .content3 .des3,
+.carousel.prev .list3 .item3:nth-child(2) .content3 .buttons
+{
+    animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+@keyframes contentOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+@media screen and (max-width: 678px) {
+    .carousel .list3 .item3 .content3{
+        padding-right: 0;
+    }
+    .carousel .list3 .item3 .content3 .title3{
+        font-size: 30px;
+    }
+}
